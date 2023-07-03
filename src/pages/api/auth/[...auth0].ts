@@ -1,10 +1,10 @@
 // pages/api/auth/[auth0].js
 import {handleAuth, handleCallback} from '@auth0/nextjs-auth0';
-import Cookies from "js-cookie";
+import { setCookie } from "cookies-next";
 
 // @ts-ignore
 const afterCallback = (req, res, session, state) => {
-  Cookies.set('token', session.idToken, {expires: 7})
+  setCookie("token", session.idToken, { req, res, maxAge: 60 * 60 * 24 });
   return session
 };
 

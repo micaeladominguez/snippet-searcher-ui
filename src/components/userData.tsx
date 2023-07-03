@@ -12,7 +12,7 @@ export default function UserData() {
   }
 
   const containerStyles = {
-    height: '100vh',
+    width: '100vw',
     backgroundColor: '#f5f5f5',
     padding: '20px',
   };
