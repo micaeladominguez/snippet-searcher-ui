@@ -2,9 +2,10 @@ import React, {FC} from 'react'
 import {zodResolver} from '@hookform/resolvers/zod'
 import {Box, Button, Grid} from '@mui/material'
 import {Controller, FormContainer} from 'react-hook-form-mui'
-import {Snippet, UpdateSnippet, UpdateSnippetSchema} from '@/data/snippet'
+import {UpdateSnippet, UpdateSnippetSchema} from '@/data/snippet'
 import {javascript} from '@codemirror/lang-javascript'
 import CodeMirror from '@uiw/react-codemirror'
+import {Snippet} from "@/util/types";
 
 export type CreateSnippetFormProps = {
   snippet: Snippet
@@ -19,6 +20,7 @@ export const EditSnippetForm: FC<CreateSnippetFormProps> = ({snippet, onUpdate, 
       resolver={zodResolver(UpdateSnippetSchema)}
       onSuccess={onUpdate}
       onError={errors => console.log(errors)}
+        // @ts-ignore
       defaultValues={snippet}
     >
       <Grid container spacing={3}>

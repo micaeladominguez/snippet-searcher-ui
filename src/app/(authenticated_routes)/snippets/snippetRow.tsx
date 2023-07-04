@@ -7,9 +7,10 @@ import {useRouter} from 'next/navigation'
 import EditIcon from '@mui/icons-material/Edit'
 import ViewIcon from '@mui/icons-material/Visibility'
 import IconButton from '@mui/material/IconButton'
+import {Snippet} from "@/util/types";
 
 export type SnippetRowType = {
-  snippet: SnippetDescriptor
+  snippet: Snippet
 }
 export const SnippetRow: FC<SnippetRowType> = ({snippet}) => {
   const router = useRouter()
@@ -26,7 +27,6 @@ export const SnippetRow: FC<SnippetRowType> = ({snippet}) => {
     <TableRow key={snippet.id}>
       <TableCell>{snippet.name}</TableCell>
       <TableCell>{snippet.type}</TableCell>
-      <TableCell>{snippet.compliance}</TableCell>
       <TableCell>
         <IconButton title='View snippet' onClick={handleView}>
           <ViewIcon />
