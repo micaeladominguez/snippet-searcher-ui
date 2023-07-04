@@ -20,7 +20,6 @@ export class RealSnippetOperations implements SnippetOperations {
   }
 
   listSnippetDescriptors(): Promise<Snippet[]> {
-    console.log('api',process.env.NEXT_PUBLIC_API_URL);
     return axios.get(process.env.NEXT_PUBLIC_API_URL+'/api/snippets')
   }
 

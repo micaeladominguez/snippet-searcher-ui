@@ -34,7 +34,7 @@ export const SnippetTable: FC = () => {
                 </TableRow>
               </TableHead>
               <TableBody>
-                {snippets && snippets.map((snippet) => (
+                {snippets && Array.isArray(snippets) && snippets?.map((snippet) => (
                     <SnippetRow key={snippet.id} snippet={snippet}/>
                 ))}
               </TableBody>
