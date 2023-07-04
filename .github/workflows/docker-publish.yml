@@ -48,3 +48,4 @@ jobs:
         run: |
           docker build -t ghcr.io/${{ env.OWNER_LC }}/snippets-front:0.0.1 .
           docker push ghcr.io/${{ env.OWNER_LC }}/snippets-front:0.0.1
+
