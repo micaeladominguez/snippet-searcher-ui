@@ -41,7 +41,6 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
-
       - name: Build and push Docker image
         env:
           GITHUB_ACTOR: ${{ github.repository_owner }}
