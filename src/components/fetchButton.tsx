@@ -7,7 +7,6 @@ export default function FetchButton(){
     // Fetch /snippets via axios
     // Set the data in state
     const response = await axios.get(`actuator`)
-    console.log(response.data)
   }
   return (
       <Button onClick={fetchData}>Fetch Data</Button>

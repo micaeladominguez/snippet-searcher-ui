@@ -4,10 +4,7 @@ import FetchButton from "@/components/fetchButton";
 
 const Home = () => {
   return (
-      <>
-        <UserData/>
-        <FetchButton/>
-      </>
+      <UserData/>
   )
 }
 

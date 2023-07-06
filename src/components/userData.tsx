@@ -23,21 +23,21 @@ export default function UserData() {
 
   return (
       <Box sx={containerStyles}>
-        <Typography variant="h3" sx={itemStyles}>
+        <Typography color="black" variant="h3" sx={itemStyles}>
           Welcome, {user.name}
         </Typography>
         <Box sx={itemStyles}>
-          <Typography variant="body2">
+          <Typography color="black" variant="body2">
             Email: {user.email}
           </Typography>
         </Box>
         <Box sx={itemStyles}>
-          <Typography variant="body2">
+          <Typography color="black" variant="body2">
             Email Verified: {user.email_verified ? 'Yes' : 'No'}
           </Typography>
         </Box>
         <Box sx={itemStyles}>
-          <Typography variant="body2">
+          <Typography color="black" variant="body2">
             Nickname: {user.nickname}
           </Typography>
         </Box>
