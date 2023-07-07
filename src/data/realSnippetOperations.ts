@@ -12,7 +12,7 @@ export class RealSnippetOperations implements SnippetOperations {
   }
 
   createSnippet(createSnippet: CreateSnippet): Promise<Snippet> {
-    return axios.post('/backend/snippets', createSnippet)
+    return axios.post('/backend/snippets/create', createSnippet)
   }
 
   getSnippetById(id: string): Promise<Snippet | undefined> {
@@ -24,6 +24,6 @@ export class RealSnippetOperations implements SnippetOperations {
   }
 
   updateSnippetById(id: string, updateSnippet: UpdateSnippet): Promise<Snippet> {
-    return axios.patch('/backend/snippets/'+id, updateSnippet)
+    return axios.patch('/backend/update/'+id, updateSnippet)
   }
 }
