@@ -24,7 +24,7 @@ export default function UserData() {
   return (
       <Box sx={containerStyles}>
         <Typography color="black" variant="h3" sx={itemStyles}>
-          Welcome, {user.name}
+          Welcome, {user.nickname}
         </Typography>
         <Box sx={itemStyles}>
           <Typography color="black" variant="body2">
@@ -38,7 +38,7 @@ export default function UserData() {
         </Box>
         <Box sx={itemStyles}>
           <Typography color="black" variant="body2">
-            Nickname: {user.nickname}
+            Nickname: {user.name}
           </Typography>
         </Box>
       </Box>

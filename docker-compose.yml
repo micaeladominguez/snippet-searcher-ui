@@ -1,0 +1,21 @@
+#Docker compose file for building this app using Dockerfile
+# Path: docker-compose.yml
+# Compare this snippet from docker-compose.yml:
+
+version: '3'
+
+services:
+    app:
+      container_name: app
+      environment:
+        NEXT_PUBLIC_API_URL: ${NEXT_PUBLIC_API_URL}
+        AUTH0_SECRET: ${AUTH0_SECRET}
+        AUTH0_BASE_URL: ${AUTH0_BASE_URL}
+        AUTH0_ISSUER_BASE_URL: ${AUTH0_ISSUER_BASE_URL}
+        AUTH0_CLIENT_ID: ${AUTH0_CLIENT_ID}
+        AUTH0_CLIENT_SECRET: ${AUTH0_CLIENT_SECRET}
+      ports:
+        - "3000:3000"
+      build:
+        context: .
+        dockerfile: Dockerfile
