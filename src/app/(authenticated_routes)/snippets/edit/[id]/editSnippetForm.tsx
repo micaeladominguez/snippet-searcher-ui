@@ -26,7 +26,7 @@ export const EditSnippetForm: FC<CreateSnippetFormProps> = ({snippet, onUpdate, 
       <Grid container spacing={3}>
         <Grid item xs={12}>
           <Controller
-            name="content"
+            name="code"
             render={({field}) => (
               <CodeMirror
                 value={field.value}
