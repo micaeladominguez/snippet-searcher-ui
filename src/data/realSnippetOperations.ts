@@ -28,7 +28,7 @@ export class RealSnippetOperations implements SnippetOperations {
   }
 
   updateSnippetById(id: string, updateSnippet: UpdateSnippet): Promise<SnippetResponse<Snippet>> {
-    return axios.patch('/backend/update/'+id, updateSnippet,{headers: this.headers})
+    return axios.patch('/backend/update?snippetId='+id, updateSnippet,{headers: this.headers})
   }
 }
 
