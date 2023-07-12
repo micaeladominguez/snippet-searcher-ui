@@ -23,10 +23,14 @@ export const SnippetRow: FC<SnippetRowType> = ({snippet}) => {
     router.push(`/snippets/edit/${snippet.id}`)
   }, [router, snippet.id])
 
+  console.log(snippet)
+  const code = `${snippet.code.substring(0,12)}${snippet.code.length > 12 ? '...' : ''}`
+
   return (
     <TableRow key={snippet.id}>
       <TableCell>{snippet.name}</TableCell>
-      <TableCell>{snippet.type}</TableCell>
+      <TableCell>{snippet.role}</TableCell>
+      <TableCell>{code}</TableCell>
       <TableCell>
         <IconButton title='View snippet' onClick={handleView}>
           <ViewIcon />

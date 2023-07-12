@@ -10,7 +10,8 @@ import {SnippetRow} from '@/app/(authenticated_routes)/snippets/snippetRow'
 export const SnippetTable: FC = () => {
 
   const {snippetOperations} = useOperations()
-  const {data: snippets, isFetching} = useQuery(['snippets', 'descriptors'], snippetOperations.listSnippetDescriptors)
+  const {data, isFetching} = useQuery(['snippets', 'descriptors'], snippetOperations.listSnippetDescriptors)
+  const snippets = data?.data
 
   return (
       <>
@@ -34,7 +35,7 @@ export const SnippetTable: FC = () => {
                 </TableRow>
               </TableHead>
               <TableBody>
-                {snippets && Array.isArray(snippets) && snippets?.map((snippet) => (
+                {snippets && snippets?.map((snippet) => (
                     <SnippetRow key={snippet.id} snippet={snippet}/>
                 ))}
               </TableBody>

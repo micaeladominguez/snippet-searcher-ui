@@ -2,7 +2,7 @@ import {CreateSnippet, SnippetDescriptor, UpdateSnippet} from '@/data/snippet'
 import autoBind from 'auto-bind'
 import axios from "axios";
 import {SnippetOperations} from "@/data/snippetOperations";
-import {Snippet} from "@/util/types";
+import {Snippet, SnippetResponse} from "@/util/types";
 import {getCookie} from "cookies-next";
 
 
@@ -15,19 +15,21 @@ export class RealSnippetOperations implements SnippetOperations {
     autoBind(this)
   }
 
-  createSnippet(createSnippet: CreateSnippet): Promise<Snippet> {
+  createSnippet(createSnippet: CreateSnippet): Promise<SnippetResponse<Snippet>> {
     return axios.post('/backend/snippets/create', createSnippet,{headers: this.headers})
   }
 
-  getSnippetById(id: string): Promise<Snippet | undefined> {
-    return axios.get('/backend/snippets/'+id,{headers: this.headers})
+  getSnippetById(id: string): Promise<SnippetResponse<Snippet> | undefined> {
+    return axios.get('/backend/snippet?snippetId='+id,{headers: this.headers})
   }
 
-  listSnippetDescriptors(): Promise<Snippet[]> {
+  listSnippetDescriptors(): Promise<SnippetResponse<Snippet[]>> {
     return axios.get('/backend/snippets',{headers: this.headers})
   }
 
-  updateSnippetById(id: string, updateSnippet: UpdateSnippet): Promise<Snippet> {
+  updateSnippetById(id: string, updateSnippet: UpdateSnippet): Promise<SnippetResponse<Snippet>> {
     return axios.patch('/backend/update/'+id, updateSnippet,{headers: this.headers})
   }
 }
+
+
